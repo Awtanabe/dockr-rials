@@ -1,0 +1,53 @@
+version: "3.7"
+
+services:
+ app:
+   stdin_open: true
+   tty: true
+   build: .
+   init: true
+
+   ports:
+     - "3000:3000"
+
+   volumes:
+     - .:/app
+     - /app/node_modules
+
+
+
+
+# version: "3.7"
+
+# services:
+#  app:
+#    enviroment: 
+#      - DISABLE_SPRING=1
+   
+#    stdin_open: true
+#    tty: true
+#    build: .
+#    init: true
+   
+#    ports:
+#      - "3000:3000"
+
+#    volumes:
+#      - .:/app
+#      - /app/node_modules
+
+
+#  spring:
+#    build: . 
+#    command: spring server
+#    entrypoint: /docker-entrypoint-spring.sh
+
+#    init: true
+
+#    enviroment: - SPRING_SOCKET=/tmp/spring/spring.sock
+
+#    pid: host
+
+#  volums: 
+#    spring-tmp:
+  
